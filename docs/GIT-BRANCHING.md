@@ -3,7 +3,11 @@
 ## Model
 
 - Trunk-based development with short-lived branches.
-- `main` is protected and always releasable — no long-lived `develop`/release branches.
+- `main` is always releasable — no long-lived `develop`/release branches.
+- `main` carries **no GitHub branch protection**: nothing server-side blocks a direct push, a
+  force-push, or a merge that skipped review. Everything below is convention, held up by the session
+  workflow rather than by the host — so a direct push to `main` is a mistake, not an option. If you want
+  it enforced, add a ruleset requiring the CI checks; until then the discipline is yours to keep.
 - Branch from `main`, merge back via squash PR, delete the branch.
 
 ## Branch naming

@@ -28,7 +28,7 @@ Cluster-touching features additionally need a manual smoke against a local kind 
 
 ## Branches & commits
 
-Full model in [GIT-BRANCHING.md](GIT-BRANCHING.md). In short: trunk-based off protected `main`; branches `sprint-<N>/<story-slug>` (feedback: `fix/<slug>`); Conventional Commits (`feat|fix|refactor|test|docs|chore|build|ci(scope): subject`), one logical change per commit; one PR per story, squash-merged.
+Full model in [GIT-BRANCHING.md](GIT-BRANCHING.md). In short: trunk-based off `main` (which has no branch protection — the flow is convention, so never push straight to it); branches `sprint-<N>/<story-slug>` (feedback: `fix/<slug>`); Conventional Commits (`feat|fix|refactor|test|docs|chore|build|ci(scope): subject`), one logical change per commit; one PR per story, squash-merged.
 
 ## Definition of Done
 
