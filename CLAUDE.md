@@ -93,7 +93,7 @@ Targets are stubs until Sprint 0 Story 0.5 makes them real.
 ## Git & branching
 
 Full model: [docs/GIT-BRANCHING.md](docs/GIT-BRANCHING.md). Summary:
-- Trunk-based; `main` protected and always releasable; short-lived branches `sprint-<N>/<story-slug>` (feedback: `fix/<slug>`).
+- Trunk-based; `main` always releasable; short-lived branches `sprint-<N>/<story-slug>` (feedback: `fix/<slug>`). `main` has **no GitHub branch protection** — the PR + green-gate flow below is convention, not server-side enforced, so never push straight to `main`.
 - Conventional Commits: `feat|fix|refactor|test|docs|chore|build|ci(scope): subject`; one logical change per commit.
 - One PR per story (or per sprint if solo and small); squash-merge; semver tags — `v0.<sprint-milestone>.<patch>` through the 0.x line, then **`v1.0.0` (first stable GA, 2026-07-21)** and standard semver thereafter.
 - PRs merge in the same session: agent review + green gates (`make test`/`lint`/`fe-test`; CI once Sprint 8 lands) → squash-merge → delete branch → sync local `main`. Sessions end clean on up-to-date `main`; a blocked merge is logged in `STATUS.md`.
