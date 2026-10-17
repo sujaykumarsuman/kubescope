@@ -6,6 +6,34 @@ All notable changes to Kubescope are documented here. Format follows
 
 ## [Unreleased]
 
+## [1.2.1] — 2026-10-17
+
+No functional change to the dashboard. This release exists to publish images
+under the project's new owner, and carries one test-only fix.
+
+### Changed
+
+- **The project moved from the `skriptvalley` org to `sujaykumarsuman` (FB-22).**
+  The Go module path is now `github.com/sujaykumarsuman/kubescope` and the image
+  is `ghcr.io/sujaykumarsuman/kubescope`. Old GitHub URLs redirect, so existing
+  clones and the earlier release tags keep resolving. **GHCR packages do not
+  follow a repo transfer**, so `1.2.0` and earlier images stay published at
+  `ghcr.io/skriptvalley/kubescope`; `1.2.1` is the first tag available under the
+  new namespace, and `latest` now resolves there. Pull paths in the README and
+  the compose file were updated to match. The skriptvalley "Dusk" design system
+  (ADR-0009) keeps its name — it identifies the design system, not the owner.
+
+### Fixed
+
+- **`make fe-test` on Node >= 22 (FB-23).** The `theme-toggle` suite failed on
+  `localStorage.clear()` with `localStorage` undefined. Node >= 22 registers its
+  own Web Storage globals, which stay inert without `--localstorage-file` and
+  shadow jsdom's working implementation; vitest 2.x does not reinstate jsdom's
+  over them. `web/src/test/setup.ts` now rebinds both Web Storage globals to the
+  environment's jsdom window, restoring the real `Storage` rather than a stub.
+  `sessionStorage` was silently resolving to Node's own cross-realm instance and
+  is rebound too. CI was unaffected throughout — it pins Node 20.
+
 ## [1.2.0] — 2026-09-24
 
 ### Added
