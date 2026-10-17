@@ -42,4 +42,4 @@ kubescope/
 
 ## Single module
 
-One Go module at the root: `github.com/skriptvalley/kubescope`. One binary, one container, one release artifact — a multi-module workspace would add versioning and replace-directive overhead with zero payoff at this size. The frontend is not a Go package; it joins the artifact only through `embed.FS` at build time.
+One Go module at the root: `github.com/sujaykumarsuman/kubescope`. One binary, one container, one release artifact — a multi-module workspace would add versioning and replace-directive overhead with zero payoff at this size. The frontend is not a Go package; it joins the artifact only through `embed.FS` at build time.

@@ -12,7 +12,7 @@ import (
 	apierrors "k8s.io/apimachinery/pkg/api/errors"
 	"k8s.io/apimachinery/pkg/runtime/schema"
 
-	"github.com/skriptvalley/kubescope/internal/kube"
+	"github.com/sujaykumarsuman/kubescope/internal/kube"
 )
 
 func TestBuildPodLogOptions(t *testing.T) {

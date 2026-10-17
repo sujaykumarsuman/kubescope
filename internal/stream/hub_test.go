@@ -17,7 +17,7 @@ import (
 	"k8s.io/client-go/dynamic"
 	dynamicfake "k8s.io/client-go/dynamic/fake"
 
-	"github.com/skriptvalley/kubescope/internal/kube"
+	"github.com/sujaykumarsuman/kubescope/internal/kube"
 )
 
 var podsGVR = schema.GroupVersionResource{Group: "", Version: "v1", Resource: "pods"}

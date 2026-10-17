@@ -12,7 +12,7 @@ import (
 	"k8s.io/client-go/dynamic"
 	"k8s.io/client-go/kubernetes"
 
-	"github.com/skriptvalley/kubescope/internal/kube"
+	"github.com/sujaykumarsuman/kubescope/internal/kube"
 )
 
 // Cluster is the context/cluster surface the context and overview handlers

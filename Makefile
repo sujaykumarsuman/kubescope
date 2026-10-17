@@ -1,6 +1,6 @@
 # Kubescope — build/dev/test targets. See CLAUDE.md "Dev commands".
 
-IMAGE            ?= ghcr.io/skriptvalley/kubescope:latest
+IMAGE            ?= ghcr.io/sujaykumarsuman/kubescope:latest
 PLATFORMS        ?= linux/amd64,linux/arm64
 BUILDER          ?= kubescope-builder
 KIND_CLUSTER     ?= kubescope

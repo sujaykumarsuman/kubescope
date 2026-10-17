@@ -26,9 +26,9 @@ import (
 	clientcmdapi "k8s.io/client-go/tools/clientcmd/api"
 	"sigs.k8s.io/controller-runtime/pkg/envtest"
 
-	"github.com/skriptvalley/kubescope/internal/kube"
-	"github.com/skriptvalley/kubescope/internal/resources"
-	"github.com/skriptvalley/kubescope/internal/server"
+	"github.com/sujaykumarsuman/kubescope/internal/kube"
+	"github.com/sujaykumarsuman/kubescope/internal/resources"
+	"github.com/sujaykumarsuman/kubescope/internal/server"
 )
 
 // writeTwoContextKubeconfig writes a kubeconfig with the live envtest context

@@ -39,7 +39,7 @@ kubeconfig — the simplest path, and the apiserver at `127.0.0.1` is reachable
 directly. Pass `--build` to force a rebuild first.
 
 `run --docker` runs the published container image instead
-(`KUBESCOPE_IMAGE`, default `ghcr.io/skriptvalley/kubescope:latest`; pass
+(`KUBESCOPE_IMAGE`, default `ghcr.io/sujaykumarsuman/kubescope:latest`; pass
 `--build` to `make docker-build` it first — otherwise the image must already be
 present locally, or the script tells you to build it). The kubeconfig is copied
 into a throwaway temp dir and adapted per OS so the containerised process can

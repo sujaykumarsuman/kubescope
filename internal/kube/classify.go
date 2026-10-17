@@ -45,7 +45,7 @@ type ClassifyHints struct {
 
 // docADR0004 is the auth/kubeconfig-in-Docker doc referenced by the classes
 // whose fixes it covers.
-const docADR0004 = "https://github.com/skriptvalley/kubescope/blob/main/docs/adr/0004-cluster-auth-and-kubeconfig-in-docker.md"
+const docADR0004 = "https://github.com/sujaykumarsuman/kubescope/blob/main/docs/adr/0004-cluster-auth-and-kubeconfig-in-docker.md"
 
 // Remediation texts are owned by this file (single source of truth); each is
 // one paragraph.

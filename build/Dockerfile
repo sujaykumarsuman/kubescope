@@ -1,7 +1,7 @@
 # syntax=docker/dockerfile:1
 # Multi-stage, multi-arch build (ADR-0002): Node builds the SPA, Go embeds it,
 # distroless runs it. Build from the repo root:
-#   docker buildx build -f build/Dockerfile -t ghcr.io/skriptvalley/kubescope:latest .
+#   docker buildx build -f build/Dockerfile -t ghcr.io/sujaykumarsuman/kubescope:latest .
 
 # --- Stage 1: frontend build (runs on the build platform) ---
 FROM --platform=$BUILDPLATFORM node:20-alpine AS frontend

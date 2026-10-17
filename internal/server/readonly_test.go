@@ -14,7 +14,7 @@ import (
 	"github.com/stretchr/testify/require"
 	"k8s.io/client-go/kubernetes/fake"
 
-	"github.com/skriptvalley/kubescope/internal/stream"
+	"github.com/sujaykumarsuman/kubescope/internal/stream"
 )
 
 // mutatingRoutes enumerates every mutating API route. This list is the read-only

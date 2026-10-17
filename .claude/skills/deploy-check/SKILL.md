@@ -29,7 +29,7 @@ make kind-up
 ## 3. Run the container with the mounted kubeconfig
 
 ```sh
-docker run --rm -p 8080:8080 -v ~/.kube/config:/kubeconfig:ro ghcr.io/skriptvalley/kubescope:latest
+docker run --rm -p 8080:8080 -v ~/.kube/config:/kubeconfig:ro ghcr.io/sujaykumarsuman/kubescope:latest
 ```
 
 **kind-in-docker caveat (ADR-0004, `docs/adr/0004-cluster-auth-and-kubeconfig-in-docker.md`):** kind's API server address in the kubeconfig is `127.0.0.1:<port>`, which inside the container is the container itself.

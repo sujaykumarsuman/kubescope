@@ -10,7 +10,7 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/skriptvalley/kubescope/internal/resources"
+	"github.com/sujaykumarsuman/kubescope/internal/resources"
 )
 
 // Service port-forward (FB-13, ADR-0006 addendum). A pod forward is 1:1 — one

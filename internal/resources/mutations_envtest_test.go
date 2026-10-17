@@ -34,8 +34,8 @@ import (
 	"sigs.k8s.io/controller-runtime/pkg/envtest"
 	"sigs.k8s.io/yaml"
 
-	"github.com/skriptvalley/kubescope/internal/kube"
-	"github.com/skriptvalley/kubescope/internal/server"
+	"github.com/sujaykumarsuman/kubescope/internal/kube"
+	"github.com/sujaykumarsuman/kubescope/internal/server"
 )
 
 func int32p(i int32) *int32 { return &i }

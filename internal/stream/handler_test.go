@@ -20,7 +20,7 @@ import (
 	"k8s.io/client-go/kubernetes"
 	"k8s.io/client-go/kubernetes/fake"
 
-	"github.com/skriptvalley/kubescope/internal/kube"
+	"github.com/sujaykumarsuman/kubescope/internal/kube"
 )
 
 // switchableCluster lets a test flip the active context mid-stream to exercise

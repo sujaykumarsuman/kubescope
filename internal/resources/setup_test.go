@@ -10,7 +10,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/skriptvalley/kubescope/internal/kube"
+	"github.com/sujaykumarsuman/kubescope/internal/kube"
 )
 
 func decodeSetupState(t *testing.T, body []byte) SetupState {

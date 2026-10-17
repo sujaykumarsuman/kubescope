@@ -5,10 +5,10 @@ Kubescope is a web-based Kubernetes dashboard that runs as a **single Docker con
 ## Quick start
 
 ```sh
-docker run --rm -p 8080:8080 -v ~/.kube/config:/kubeconfig:ro ghcr.io/skriptvalley/kubescope:latest
+docker run --rm -p 8080:8080 -v ~/.kube/config:/kubeconfig:ro ghcr.io/sujaykumarsuman/kubescope:latest
 ```
 
-Then open http://localhost:8080. Pin a specific release with a version tag, e.g. `ghcr.io/skriptvalley/kubescope:0.1.0`.
+Then open http://localhost:8080. Pin a specific release with a version tag, e.g. `ghcr.io/sujaykumarsuman/kubescope:0.1.0`.
 
 - Your kubeconfig is mounted **read-only** at `/kubeconfig` inside the container.
 - **Linux:** the container runs as a non-root user, and a bind mount keeps the host file's owner and mode — a typical `0600` kubeconfig is unreadable inside. Add `--user "$(id -u):$(id -g)"` to the `docker run`. (macOS/Windows file sharing remaps ownership, so this isn't needed there.)
@@ -44,7 +44,7 @@ docker run --rm -p 8080:8080 \
   -e KUBESCOPE_AUTH_MODE=basic \
   -e KUBESCOPE_AUTH_BASIC_USERNAME=admin \
   -e KUBESCOPE_AUTH_BASIC_PASSWORD='choose-a-strong-password' \
-  ghcr.io/skriptvalley/kubescope:latest
+  ghcr.io/sujaykumarsuman/kubescope:latest
 ```
 
 The browser prompts for credentials on first load. The password lives in the process environment, so treat that environment as sensitive (hashed/file-based credentials and OIDC are planned for a later release).
@@ -56,7 +56,7 @@ docker run --rm -p 8080:8080 \
   -v ~/.kube/config:/kubeconfig:ro \
   -e KUBESCOPE_AUTH_MODE=session \
   -e KUBESCOPE_AUTH_BASIC_PASSWORD='choose-a-strong-password' \
-  ghcr.io/skriptvalley/kubescope:latest
+  ghcr.io/sujaykumarsuman/kubescope:latest
 ```
 
 The session cookie is HttpOnly, `SameSite=Strict` and scoped to Kubescope's own path (`KUBESCOPE_BASE_PATH`). It is `Secure` when served over TLS, and it expires server-side after 12 hours; open streams and shells end with it. Sessions survive restarts; changing the password (or `KUBESCOPE_AUTH_SESSION_KEY`, recommended when the password is shared) ends them all. Failed sign-ins are rate-limited (10, then 10 per minute).
@@ -124,7 +124,7 @@ Kubescope never dead-ends on a cluster problem. With no kubeconfig (or an empty/
 If you keep one kubeconfig file per cluster instead of a single merged file, mount the whole directory once and point Kubescope at it:
 
 ```sh
-docker run --rm -p 8080:8080 -v ~/.kube:/kubeconfig:ro ghcr.io/skriptvalley/kubescope:latest
+docker run --rm -p 8080:8080 -v ~/.kube:/kubeconfig:ro ghcr.io/sujaykumarsuman/kubescope:latest
 ```
 
 Every parseable kubeconfig file in the directory is loaded and merged with kubectl semantics (first occurrence of a context/cluster/user name wins; broken or oversized files are skipped and reported per file, never as a global failure). `KUBESCOPE_KUBECONFIG` also accepts an explicit colon-separated list mixing files and directories, e.g. `-e KUBESCOPE_KUBECONFIG=/kubeconfigs:/extra/staging.yaml`.

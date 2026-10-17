@@ -21,7 +21,7 @@
 #   KUBESCOPE_TESTENV_KUBECONFIG   kubeconfig path (default: <this dir>/kubeconfig)
 #   KUBESCOPE_TESTENV_DEV_CLUSTER  dev cluster name  (default: kubescope-dev)
 #   KUBESCOPE_TESTENV_PROD_CLUSTER prod cluster name (default: kubescope-prod)
-#   KUBESCOPE_IMAGE                image for 'run --docker' (default: ghcr.io/skriptvalley/kubescope:latest)
+#   KUBESCOPE_IMAGE                image for 'run --docker' (default: ghcr.io/sujaykumarsuman/kubescope:latest)
 set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
@@ -188,7 +188,7 @@ run_docker() {
   have docker || die "docker not found — needed for '--docker'. Install Docker Desktop: https://www.docker.com/products/docker-desktop/"
   docker info >/dev/null 2>&1 || die "the Docker daemon is not running — start Docker Desktop and retry."
 
-  local image="${KUBESCOPE_IMAGE:-ghcr.io/skriptvalley/kubescope:latest}"
+  local image="${KUBESCOPE_IMAGE:-ghcr.io/sujaykumarsuman/kubescope:latest}"
   if [ "$do_build" -eq 1 ]; then
     log "building image $image (make docker-build) ..."
     make -C "$REPO_ROOT" docker-build
@@ -311,7 +311,7 @@ Usage: testenv.sh <command>
   run [--build] [--docker]
                   run kubescope against the environment. Native by default;
                   --docker runs the container image instead (KUBESCOPE_IMAGE,
-                  default ghcr.io/skriptvalley/kubescope:latest); --build first
+                  default ghcr.io/sujaykumarsuman/kubescope:latest); --build first
                   rebuilds the binary (or, with --docker, the image).
   compose-config  write a container-ready kubeconfig to build/.e2e-kubeconfig for
                   the docker-compose flow (make compose-up); kind on macOS/Windows

@@ -4,7 +4,7 @@
 # stack (container -> kubeconfig -> apiserver -> JSON -> SPA shell).
 set -euo pipefail
 
-IMAGE="${IMAGE:-ghcr.io/skriptvalley/kubescope:latest}"
+IMAGE="${IMAGE:-ghcr.io/sujaykumarsuman/kubescope:latest}"
 KIND_CLUSTER="${KIND_CLUSTER:-kubescope}"
 PORT="${PORT:-18080}"
 CONTAINER="kubescope-smoke"

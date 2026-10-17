@@ -4,13 +4,13 @@ import (
 	"log/slog"
 	"net/http"
 
-	"github.com/skriptvalley/kubescope/internal/kube"
+	"github.com/sujaykumarsuman/kubescope/internal/kube"
 )
 
 // docKubeconfigInDocker is the auth/kubeconfig-in-Docker doc surfaced by the
 // no-kubeconfig setup state; the same link classification.DocURL carries for
 // connectivity failures (ADR-0004).
-const docKubeconfigInDocker = "https://github.com/skriptvalley/kubescope/blob/main/docs/adr/0004-cluster-auth-and-kubeconfig-in-docker.md"
+const docKubeconfigInDocker = "https://github.com/sujaykumarsuman/kubescope/blob/main/docs/adr/0004-cluster-auth-and-kubeconfig-in-docker.md"
 
 // SetupState is the first-run / connectivity posture the frontend reads to
 // decide between the app and a guided starter screen (FB-6, ADR-0007). It is

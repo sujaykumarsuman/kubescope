@@ -16,7 +16,7 @@ import (
 	"k8s.io/apimachinery/pkg/types"
 	dynfake "k8s.io/client-go/dynamic/fake"
 
-	"github.com/skriptvalley/kubescope/internal/graph"
+	"github.com/sujaykumarsuman/kubescope/internal/graph"
 )
 
 var (

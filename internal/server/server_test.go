@@ -20,8 +20,8 @@ import (
 	"k8s.io/client-go/kubernetes/fake"
 	"k8s.io/client-go/rest"
 
-	"github.com/skriptvalley/kubescope/internal/kube"
-	"github.com/skriptvalley/kubescope/web"
+	"github.com/sujaykumarsuman/kubescope/internal/kube"
+	"github.com/sujaykumarsuman/kubescope/web"
 )
 
 // fakeProvider satisfies resources.Cluster for router-level tests.
