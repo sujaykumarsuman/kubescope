@@ -125,8 +125,10 @@ ADR-0009).
 - CPU/Memory columns and per-namespace quota bars require **metrics-server** /
   `ResourceQuota` objects respectively; both degrade gracefully when absent.
 - The GHCR package visibility follow-up (FB-10) is still open: until it is made
-  public, the anonymous `docker run ghcr.io/sujaykumarsuman/kubescope:1.0.0` pull
-  requires authentication.
+  public, the anonymous `docker run ghcr.io/skriptvalley/kubescope:1.0.0` pull
+  requires authentication. (The repo later moved to `sujaykumarsuman`; this
+  1.0.0 image stays at the `skriptvalley` path, since GHCR packages do not
+  follow a repo transfer — FB-22.)
 - exec-plugin clusters (EKS/GKE) and file-path-cert kubeconfigs still need the
   documented extra steps inside the container (ADR-0004); OIDC auth,
   multi-user/hashed credentials, and an in-cluster Helm chart remain deferred.
@@ -180,7 +182,7 @@ the post-sprint connectivity, kubeconfig-source, and onboarding hardening rounds
   network controls.
 - **CI/CD (Sprint 8).** GitHub Actions PR pipeline (Go + frontend lint, unit
   tests, embedded-SPA binary build) and a tag-triggered workflow publishing the
-  multi-arch image to `ghcr.io/sujaykumarsuman/kubescope`.
+  multi-arch image to `ghcr.io/skriptvalley/kubescope`.
 - **Cluster-connectivity resilience & onboarding (FB-6, FB-1).** No-kubeconfig,
   no-context, and unreachable states render a guided setup starter instead of a
   raw error; apiserver/transport failures are classified into an actionable
