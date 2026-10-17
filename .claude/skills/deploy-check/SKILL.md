@@ -49,7 +49,7 @@ docker run --rm -p 8080:8080 -v ~/.kube/config:/kubeconfig:ro ghcr.io/sujaykumar
 | 4 | Generic list | Core resource types list; the sample CRD type lists too |
 | 5 | Workload detail + logs | Pod detail renders; logs stream live |
 | 6 | Mutation (scratch ns) | On the Deployment seeded in `kubescope-smoke`, via the UI: edit + apply its YAML, scale up and back down, rollout-restart it, then delete it — all succeed. Also cordon and uncordon the node. Then delete the ns |
-| 7 | Read-only mode | Restart the container with `-e KUBESCOPE_READ_ONLY=true`; every mutating route from check 6 — apply, scale, rollout-restart, delete, cordon/uncordon, drain — is rejected **403 server-side**, verified by `curl` bypassing the UI, with the cluster left unchanged; the UI also disables write controls |
+| 7 | Read-only mode | Restart the container with `-e KUBESCOPE_READ_ONLY=true`; **every** mutating route — apply, scale, rollout-restart, delete, cordon/uncordon **and drain** — is rejected **403 server-side**, verified by `curl` bypassing the UI, with the cluster left unchanged; the UI also disables write controls. Drain is covered here even though check 6 does not exercise it (see below) |
 | 8 | Secret masking | Secret values masked by default, reveal-on-click works, values absent from container logs |
 
 **No create endpoint.** Kubescope writes only to objects that already exist. Sprint 5 Story 5.1 scopes the YAML
@@ -57,6 +57,11 @@ editor to "edit + apply" on the generic *detail* view, and the mutating routes a
 (`PUT`, which 404s on a missing object), delete, scale, rollout-restart and cordon/uncordon/drain. So scratch
 fixtures are seeded with `kubectl` in step 2 rather than through the UI. An earlier revision of check 6 said to
 "create a Deployment" through the UI, which was never possible (FB-24).
+
+**Why check 6 skips drain.** Draining the only node of a single-node kind cluster evicts the control-plane
+workload and leaves nothing to drain onto, so it is not run in the positive direction. Read-only must still
+reject it, which is why check 7 covers drain regardless — Sprint 5 requires a test enumerating *every* mutating
+route. The eviction path itself (PDB handling, DaemonSet skip) is covered by envtest, not by this runbook.
 
 Cleanup: delete `kubescope-smoke`, remove the sample CRD, `make kind-down` (or leave the cluster for dev).
 
