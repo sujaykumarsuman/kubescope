@@ -14,7 +14,7 @@ Prove the whole model end-to-end: `docker run` with a mounted kubeconfig shows t
 ### Story 0.1 — Go module & HTTP server skeleton
 Bootstrap the Go module and a minimal HTTP server: `cmd/kubescope` entrypoint, chi router, slog, `/healthz`, env config in `internal/config`.
 **Acceptance criteria:**
-- [ ] `go mod init github.com/skriptvalley/kubescope` done (Go 1.23+); `go build ./...` succeeds.
+- [ ] `go mod init github.com/sujaykumarsuman/kubescope` done (Go 1.23+); `go build ./...` succeeds.
 - [ ] `GET /healthz` returns 200 with a small JSON body.
 - [ ] `internal/config` loads `KUBESCOPE_LISTEN_ADDR` (default `127.0.0.1:8080`), `KUBESCOPE_PORT` (overrides the port part of `LISTEN_ADDR`), `KUBESCOPE_KUBECONFIG` (default `/kubeconfig` → `$KUBECONFIG` → `~/.kube/config`), with validation.
 - [ ] slog structured logging: one startup line + chi request-logging middleware. No global mutable state.
@@ -46,13 +46,13 @@ Load the mounted kubeconfig, list nodes via client-go for the current context, r
 Containerize and wire the dev loop: Dockerfile in `build/`, real Make targets, kind config in `deploy/`.
 **Acceptance criteria:**
 - [ ] Multi-stage Dockerfile: node builds FE → go builds binary embedding FE → minimal runtime (distroless or alpine).
-- [ ] Multi-arch (amd64 + arm64) build target via `docker buildx`; image tagged `ghcr.io/skriptvalley/kubescope:latest`.
+- [ ] Multi-arch (amd64 + arm64) build target via `docker buildx`; image tagged `ghcr.io/sujaykumarsuman/kubescope:latest`.
 - [ ] Image sets `KUBESCOPE_LISTEN_ADDR=0.0.0.0:8080` (container boundary is the isolation — ADR-0005 default stays localhost for the bare binary).
 - [ ] Makefile stubs replaced with real targets: `dev`, `fe-dev`, `build`, `fe-build`, `test`, `fe-test`, `lint`, `docker-build`, `docker-run`, `kind-up`, `kind-down`, `smoke` — matching CLAUDE.md's Dev commands table.
 - [ ] `deploy/` contains a kind cluster config + sample run script.
 
 ## Task checklist
-- [ ] `go mod init github.com/skriptvalley/kubescope`; add chi v5, client-go, testify.
+- [ ] `go mod init github.com/sujaykumarsuman/kubescope`; add chi v5, client-go, testify.
 - [ ] Remove `.gitkeep` from every directory this sprint populates (`cmd/`, `internal/*`, `web/`, `build/`, `deploy/`).
 - [ ] `internal/config`: env loading + validation with canonical defaults.
 - [ ] `cmd/kubescope/main.go`: wire config → slog → chi router → `/healthz`.
@@ -64,7 +64,7 @@ Containerize and wire the dev loop: Dockerfile in `build/`, real Make targets, k
 - [ ] `build/Dockerfile`: multi-stage, multi-arch, runtime env `KUBESCOPE_LISTEN_ADDR=0.0.0.0:8080`.
 - [ ] Replace Makefile stubs with the real targets from Story 0.5.
 - [ ] `deploy/`: kind config + sample run script.
-- [ ] Manual smoke: kind cluster up, then `docker run --rm -p 8080:8080 -v ~/.kube/config:/kubeconfig:ro ghcr.io/skriptvalley/kubescope:latest` → node list at http://localhost:8080 (local clusters need `--network host` on Linux or a `host.docker.internal` rewrite on Mac/Win — ADR-0004).
+- [ ] Manual smoke: kind cluster up, then `docker run --rm -p 8080:8080 -v ~/.kube/config:/kubeconfig:ro ghcr.io/sujaykumarsuman/kubescope:latest` → node list at http://localhost:8080 (local clusters need `--network host` on Linux or a `host.docker.internal` rewrite on Mac/Win — ADR-0004).
 
 ## Testing requirements
 | Layer | Must cover |

@@ -55,4 +55,4 @@ If something genuinely blocks the merge (broken gate, unresolved review finding)
 | Trigger | Pipeline |
 |---|---|
 | PR to `main` | lint + test + build |
-| Tag `v*` | multi-arch image build + publish (`ghcr.io/skriptvalley/kubescope`) |
+| Tag `v*` | multi-arch image build + publish (`ghcr.io/sujaykumarsuman/kubescope`) |

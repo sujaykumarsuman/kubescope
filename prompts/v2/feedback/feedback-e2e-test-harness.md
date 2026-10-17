@@ -32,7 +32,7 @@ We want a repeatable way to exercise Kubescope against real clusters — kind fo
 ### Story B — docker-compose (the declarative launch)
 Add `build/docker-compose.yml` (the repo map already anticipates a compose in `build/`). It is the declarative equivalent of `testenv.sh run --docker`.
 **Acceptance criteria:**
-- [ ] One `kubescope` service: the image (`KUBESCOPE_IMAGE`, default `ghcr.io/skriptvalley/kubescope:latest`), a **read-only** kubeconfig mount, canonical env only (`KUBESCOPE_KUBECONFIG`, `KUBESCOPE_LISTEN_ADDR`, `KUBESCOPE_READ_ONLY`, optional `KUBESCOPE_AUTH_MODE`), and a **loopback-only** publish (`127.0.0.1:8080:8080`) — never a LAN bind (ADR-0005).
+- [ ] One `kubescope` service: the image (`KUBESCOPE_IMAGE`, default `ghcr.io/sujaykumarsuman/kubescope:latest`), a **read-only** kubeconfig mount, canonical env only (`KUBESCOPE_KUBECONFIG`, `KUBESCOPE_LISTEN_ADDR`, `KUBESCOPE_READ_ONLY`, optional `KUBESCOPE_AUTH_MODE`), and a **loopback-only** publish (`127.0.0.1:8080:8080`) — never a LAN bind (ADR-0005).
 - [ ] It consumes a kubeconfig at a fixed path produced by a prep step (kind: the `host.docker.internal`-adapted copy `testenv.sh` already makes; EKS: Story C's token-kubeconfig). The compose itself does no per-OS rewriting — it mounts what the prep step wrote. Document the two prep commands.
 - [ ] `make compose-up` / `make compose-down` wrap it; README documents both the kind and EKS flows.
 

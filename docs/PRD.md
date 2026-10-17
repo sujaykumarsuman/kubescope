@@ -13,7 +13,7 @@ A backend/platform engineer with multiple cluster kubeconfigs locally (dev, uat,
 ### Setup & contexts
 - As a developer, I can run one Docker command with my kubeconfig mounted read-only and open the dashboard at `http://localhost:8080`:
   ```sh
-  docker run --rm -p 8080:8080 -v ~/.kube/config:/kubeconfig:ro ghcr.io/skriptvalley/kubescope:latest
+  docker run --rm -p 8080:8080 -v ~/.kube/config:/kubeconfig:ro ghcr.io/sujaykumarsuman/kubescope:latest
   ```
 - As a developer, I can see every context in my kubeconfig with its connection/health status and switch the active context instantly.
 

@@ -9,7 +9,7 @@ import (
 
 	"github.com/go-chi/chi/v5"
 
-	"github.com/skriptvalley/kubescope/internal/graph"
+	"github.com/sujaykumarsuman/kubescope/internal/graph"
 )
 
 // Resource relationship graph (FB-14, ADR-0011). The traversal itself lives in

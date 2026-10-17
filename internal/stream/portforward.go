@@ -22,7 +22,7 @@ import (
 	"k8s.io/client-go/tools/portforward"
 	"k8s.io/client-go/transport/spdy"
 
-	"github.com/skriptvalley/kubescope/internal/resources"
+	"github.com/sujaykumarsuman/kubescope/internal/resources"
 )
 
 // pfReadyTimeout bounds establishing a forward so a black-hole apiserver fails

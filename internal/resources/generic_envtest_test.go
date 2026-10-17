@@ -27,9 +27,9 @@ import (
 	"k8s.io/client-go/dynamic"
 	"sigs.k8s.io/controller-runtime/pkg/envtest"
 
-	"github.com/skriptvalley/kubescope/internal/kube"
-	"github.com/skriptvalley/kubescope/internal/resources"
-	"github.com/skriptvalley/kubescope/internal/server"
+	"github.com/sujaykumarsuman/kubescope/internal/kube"
+	"github.com/sujaykumarsuman/kubescope/internal/resources"
+	"github.com/sujaykumarsuman/kubescope/internal/server"
 )
 
 func boolPtr(b bool) *bool { return &b }

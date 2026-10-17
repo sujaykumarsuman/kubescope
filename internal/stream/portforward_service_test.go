@@ -24,7 +24,7 @@ import (
 	"k8s.io/client-go/kubernetes"
 	"k8s.io/client-go/kubernetes/fake"
 
-	"github.com/skriptvalley/kubescope/internal/resources"
+	"github.com/sujaykumarsuman/kubescope/internal/resources"
 )
 
 // Story 1.2/1.3 (FB-13): the load-balancing front for a Service's ready

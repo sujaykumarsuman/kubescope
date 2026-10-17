@@ -33,7 +33,7 @@ export function StarterPage({ state }: { state: SetupState }) {
 }
 
 const ADR0004 =
-  "https://github.com/skriptvalley/kubescope/blob/main/docs/adr/0004-cluster-auth-and-kubeconfig-in-docker.md";
+  "https://github.com/sujaykumarsuman/kubescope/blob/main/docs/adr/0004-cluster-auth-and-kubeconfig-in-docker.md";
 
 function DocLink({ href, children }: { href: string; children: ReactNode }) {
   return (

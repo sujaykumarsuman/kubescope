@@ -116,7 +116,7 @@ Errors reuse the engine taxonomy: `400 invalid_focus` / `invalid_depth` / `inval
 Single container, single process ([adr/0002](adr/0002-single-binary-embedded-spa.md)):
 
 ```sh
-docker run --rm -p 8080:8080 -v ~/.kube/config:/kubeconfig:ro ghcr.io/skriptvalley/kubescope:latest
+docker run --rm -p 8080:8080 -v ~/.kube/config:/kubeconfig:ro ghcr.io/sujaykumarsuman/kubescope:latest
 ```
 
 - Kubeconfig mounted **read-only** at `/kubeconfig`. Embedded certs/tokens work as-is; file-path certs, exec-auth plugins (EKS/GKE), and local clusters (`127.0.0.1` apiservers) have documented gotchas — [adr/0004](adr/0004-cluster-auth-and-kubeconfig-in-docker.md).

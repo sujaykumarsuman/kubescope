@@ -13,7 +13,7 @@ permissions:
   packages: write
 
 env:
-  IMAGE: ghcr.io/skriptvalley/kubescope
+  IMAGE: ghcr.io/sujaykumarsuman/kubescope
 
 jobs:
   publish:

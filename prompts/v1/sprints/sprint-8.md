@@ -33,7 +33,7 @@ Sweep the whole API surface against ADR-0005 before release.
 GitHub Actions: PR pipeline plus tag-triggered image publishing.
 **Acceptance criteria:**
 - [ ] On PR: lint (Go + frontend), Go and frontend unit tests, and full binary build (embedded SPA) must pass; failures block merge.
-- [ ] On tag `v*`: multi-arch (amd64 + arm64) image built and pushed to `ghcr.io/skriptvalley/kubescope` with the version tag and `latest`.
+- [ ] On tag `v*`: multi-arch (amd64 + arm64) image built and pushed to `ghcr.io/sujaykumarsuman/kubescope` with the version tag and `latest`.
 - [ ] Pipeline runs green on this sprint's PR before merge.
 - [ ] Published image manifest lists both architectures.
 
@@ -43,7 +43,7 @@ Cut the release and make the docs true. Docs pass must cover the ADR-0004 gotcha
 - [ ] Docs pass: README quickstart verified against the published image; ADR-0004 gotchas documented for users — exec-plugin auth (EKS/GKE), file-path certs needing extra mounts, local kind/minikube requiring `--network host` (Linux) or `host.docker.internal` rewrite (Mac/Win).
 - [ ] Env var reference complete and accurate, including `KUBESCOPE_AUTH_MODE`.
 - [ ] `v0.1.0` tag pushed; GitHub release created with changelog summarizing sprints 0–8.
-- [ ] `docker run --rm -p 8080:8080 -v ~/.kube/config:/kubeconfig:ro ghcr.io/skriptvalley/kubescope:latest` works against the released image on a kind cluster.
+- [ ] `docker run --rm -p 8080:8080 -v ~/.kube/config:/kubeconfig:ro ghcr.io/sujaykumarsuman/kubescope:latest` works against the released image on a kind cluster.
 - [ ] Stretch: minimal Helm chart under `deploy/`; if skipped, note it in `STATUS.md` as a follow-up, not a blocker.
 
 ## Task checklist
@@ -53,7 +53,7 @@ Cut the release and make the docs true. Docs pass must cover the ADR-0004 gotcha
 - [ ] Write read-only regression suite iterating every mutating route.
 - [ ] Run the secret-handling audit (grep logs/handlers for Secret data paths); fix findings.
 - [ ] Add GitHub Actions PR workflow: lint + test + build (Go and frontend, embedded-SPA binary).
-- [ ] Add tag workflow: buildx multi-arch (amd64+arm64) image publish to `ghcr.io/skriptvalley/kubescope`.
+- [ ] Add tag workflow: buildx multi-arch (amd64+arm64) image publish to `ghcr.io/sujaykumarsuman/kubescope`.
 - [ ] Docs pass: README, `docs/PRD.md` success criteria check, env var table, ADR-0004 gotchas section, public-exposure warning.
 - [ ] Write the v0.1.0 changelog from `STATUS.md` sprint history.
 - [ ] Run `.claude/skills/deploy-check` pre-release verification against kind.

@@ -14,8 +14,8 @@ import (
 	"github.com/go-chi/chi/v5"
 	"github.com/go-chi/chi/v5/middleware"
 
-	"github.com/skriptvalley/kubescope/internal/resources"
-	"github.com/skriptvalley/kubescope/internal/stream"
+	"github.com/sujaykumarsuman/kubescope/internal/resources"
+	"github.com/sujaykumarsuman/kubescope/internal/stream"
 )
 
 // StreamCluster is the context/client surface the streaming handlers need:

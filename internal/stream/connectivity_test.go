@@ -16,7 +16,7 @@ import (
 	"k8s.io/client-go/dynamic"
 	clienttesting "k8s.io/client-go/testing"
 
-	"github.com/skriptvalley/kubescope/internal/kube"
+	"github.com/sujaykumarsuman/kubescope/internal/kube"
 )
 
 // errRefused is a representative connection-refused error the classifier sorts

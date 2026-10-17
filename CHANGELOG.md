@@ -126,7 +126,9 @@ ADR-0009).
   `ResourceQuota` objects respectively; both degrade gracefully when absent.
 - The GHCR package visibility follow-up (FB-10) is still open: until it is made
   public, the anonymous `docker run ghcr.io/skriptvalley/kubescope:1.0.0` pull
-  requires authentication.
+  requires authentication. (The repo later moved to `sujaykumarsuman`; this
+  1.0.0 image stays at the `skriptvalley` path, since GHCR packages do not
+  follow a repo transfer — FB-22.)
 - exec-plugin clusters (EKS/GKE) and file-path-cert kubeconfigs still need the
   documented extra steps inside the container (ADR-0004); OIDC auth,
   multi-user/hashed credentials, and an in-cluster Helm chart remain deferred.
@@ -216,5 +218,5 @@ the post-sprint connectivity, kubeconfig-source, and onboarding hardening rounds
 - OIDC auth, multi-user/hashed credentials, and an in-cluster Helm deployment are
   deferred to a later release.
 
-[1.0.0]: https://github.com/skriptvalley/kubescope/releases/tag/v1.0.0
-[0.1.0]: https://github.com/skriptvalley/kubescope/releases/tag/v0.1.0
+[1.0.0]: https://github.com/sujaykumarsuman/kubescope/releases/tag/v1.0.0
+[0.1.0]: https://github.com/sujaykumarsuman/kubescope/releases/tag/v0.1.0

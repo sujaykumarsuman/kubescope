@@ -3,7 +3,7 @@
 ## Setup
 
 ```sh
-git clone https://github.com/skriptvalley/kubescope
+git clone https://github.com/sujaykumarsuman/kubescope
 cd kubescope
 ```
 

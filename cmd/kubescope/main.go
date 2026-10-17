@@ -14,11 +14,11 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/skriptvalley/kubescope/internal/config"
-	"github.com/skriptvalley/kubescope/internal/kube"
-	"github.com/skriptvalley/kubescope/internal/server"
-	"github.com/skriptvalley/kubescope/internal/stream"
-	"github.com/skriptvalley/kubescope/web"
+	"github.com/sujaykumarsuman/kubescope/internal/config"
+	"github.com/sujaykumarsuman/kubescope/internal/kube"
+	"github.com/sujaykumarsuman/kubescope/internal/server"
+	"github.com/sujaykumarsuman/kubescope/internal/stream"
+	"github.com/sujaykumarsuman/kubescope/web"
 )
 
 // shutdownTimeout bounds the graceful drain after a signal. Overrunning it is

@@ -12,7 +12,7 @@ Kubescope runs in a Docker container but must authenticate to clusters described
 Mount the kubeconfig **read-only** into the container at `/kubeconfig` (path configurable via `KUBESCOPE_KUBECONFIG`, falling back to `$KUBECONFIG`, then `~/.kube/config` for the bare binary). Kubescope parses it, enumerates contexts, and builds a `rest.Config` per context.
 
 ```sh
-docker run --rm -p 8080:8080 -v ~/.kube/config:/kubeconfig:ro ghcr.io/skriptvalley/kubescope:latest
+docker run --rm -p 8080:8080 -v ~/.kube/config:/kubeconfig:ro ghcr.io/sujaykumarsuman/kubescope:latest
 ```
 
 ### Auth-method support matrix (v1)

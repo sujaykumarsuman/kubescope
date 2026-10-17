@@ -3,7 +3,7 @@
 #
 # For a regular kubeconfig with embedded certs and a reachable apiserver the
 # plain command is all you need:
-#   docker run --rm -p 8080:8080 -v ~/.kube/config:/kubeconfig:ro ghcr.io/skriptvalley/kubescope:latest
+#   docker run --rm -p 8080:8080 -v ~/.kube/config:/kubeconfig:ro ghcr.io/sujaykumarsuman/kubescope:latest
 #
 # Local clusters (kind/minikube/k3d) advertise 127.0.0.1, which inside a
 # container is the container itself. This script prepares a container-friendly
@@ -11,7 +11,7 @@
 # (+ insecure-skip-tls-verify, local dev only) on macOS/Windows.
 set -euo pipefail
 
-IMAGE="${IMAGE:-ghcr.io/skriptvalley/kubescope:latest}"
+IMAGE="${IMAGE:-ghcr.io/sujaykumarsuman/kubescope:latest}"
 KIND_CLUSTER="${KIND_CLUSTER:-kubescope}"
 PORT="${PORT:-8080}"
 
